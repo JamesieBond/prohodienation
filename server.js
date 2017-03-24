@@ -23,8 +23,8 @@ app.use(express.static(path.join(__dirname, 'dist')));
 
 // Set our api routes
 app.use('/api', api);
-app.use('/api', users);
-app.use('/api', todos);
+app.use('/user', users);
+app.use('/todos', todos);
 
 // Catch all other routes and return the index file
 app.get('*', (req, res) => {

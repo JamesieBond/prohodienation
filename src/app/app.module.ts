@@ -5,26 +5,39 @@ import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
-import { TodosComponent } from './todos/todos.component';
 import { TodosService } from './todos.service';
+import { UserService } from './user.service';
+import { StartComponent } from './start/start.component';
+import { StopComponent } from './stop/stop.component';
+import { ContinueComponent } from './continue/continue.component';
+import { ListComponent } from './list/list.component';
+import { HomeComponent } from './home/home.component';
+import { SignupComponent } from './signup/signup.component';
 
 // Define the routes
 const ROUTES = [
   {
     path: '',
-    redirectTo: 'todos',
+    redirectTo: 'Home',
     pathMatch: 'full'
   },
-  {
-    path: 'api/todos',
-    component: TodosComponent
-  }
+  { path: 'Home', component: HomeComponent  },
+  { path: 'Signup', component: SignupComponent  },
+  { path: 'List', component: ListComponent  },
+  { path: 'Start', component: StartComponent  },
+  { path: 'Stop', component: StopComponent  },
+  { path: 'Continue', component: ContinueComponent  }
 ];
 
 @NgModule({
   declarations: [
     AppComponent,
-    TodosComponent
+    StartComponent,
+    StopComponent,
+    ContinueComponent,
+    ListComponent,
+    HomeComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,
@@ -32,7 +45,7 @@ const ROUTES = [
     HttpModule,
     RouterModule.forRoot(ROUTES)
   ],
-  providers: [TodosService],
+  providers: [TodosService, UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,8 +1,8 @@
 {
   "project": {
     "version": "1.0.0-beta.28.3",
-    "name": "prohodie"
-  },
+    "name": "prohodienation"
+  },  
   "apps": [
     {
       "root": "src",

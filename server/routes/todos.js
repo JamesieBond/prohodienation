@@ -1,6 +1,8 @@
 const express = require('express');
 const router = express.Router();
 
+var Todo = require('../Models/todo');
+
 router.get('/todo', (req, res) =>{
 
     // use mongoose to get all todo in the database
